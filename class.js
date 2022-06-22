@@ -1,4 +1,22 @@
-const seed = 0.5;
+const seed = 0.9;
+
+const blues = [
+  "#0000ff",
+  "#1010ff",
+  "#2020ff",
+  "#3030ff",
+  "#4040ff",
+  "#5050ff",
+  "#6060ff",
+  "#7070ff",
+  "#8080ff",
+  "#9090ff",
+  "#a0a0ff",
+].reverse();
+
+const colors = "0123456789abcdef"
+  .split("")
+  .map((v) => "#" + v.repeat(4) + "ff");
 
 class Cell {
   static width = 5;
@@ -16,12 +34,14 @@ class Cell {
   }
 
   draw() {
-    this.context.fillStyle = this.alive ? "#ff8080" : "#303030";
+    let index = Math.floor(Math.log(this.age));
+    this.color = blues[index >= blues.length ? blues.length - 1 : index];
+    this.context.fillStyle = this.alive ? "#8080ff" : "#303030";
     if (this.alive) {
       this.context.beginPath();
       this.context.arc(
-        this.i * Cell.width,
-        this.j * Cell.height,
+        this.j * Cell.width,
+        this.i * Cell.height,
         Cell.width / 2,
         0,
         2 * Math.PI
@@ -72,16 +92,18 @@ class GameOfLife {
         if (cell.alive) {
           if (numAlive == 2 || numAlive == 3) {
             cell.nextAlive = true;
-            this.age += 1;
+            cell.age += 1;
           } else {
             cell.nextAlive = false;
-            this.age = 0;
+            cell.age = 0;
           }
         } else {
           if (numAlive == 3) {
             cell.nextAlive = true;
+            cell.age = 0;
           } else {
             cell.nextAlive = false;
+            cell.age = 0;
           }
         }
       }

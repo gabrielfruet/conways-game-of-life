@@ -1,7 +1,5 @@
 "use strict";
 
-//import { GameOfLife } from "./class.js";
-
 const delay = 100;
 
 let canvas;
@@ -20,11 +18,10 @@ function init() {
   canvas.style.width = "100vw";
   canvas.style.heigth = "100vh";
   function gameLoop() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
     context.fillStyle = "303030";
     context.fillRect(0, 0, canvas.width, canvas.height);
-    game.draw();
     game.nextGen();
+    game.draw();
 
     setTimeout(() => {
       window.requestAnimationFrame(() => gameLoop());
