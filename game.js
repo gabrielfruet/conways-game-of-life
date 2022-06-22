@@ -1,5 +1,14 @@
 "use strict";
 
+
+let canvasTag = document.querySelector("canvas");
+window.onload = canvasTag.setAttribute("width", window.innerWidth)
+window.addEventListener("resize",() =>{
+  canvasTag.setAttribute("width", window.innerWidth)
+})
+
+
+
 const delay = 50;
 
 let canvas;
@@ -26,8 +35,8 @@ class Cell {
     if (this.alive) {
       this.context.beginPath();
       this.context.arc(
-        this.i * Cell.width,
-        this.j * Cell.height,
+        (this.j ) * Cell.width,
+        (this.i) * Cell.height,
         Cell.width / 2,
         0,
         2 * Math.PI
@@ -137,8 +146,7 @@ function init() {
   game = new GameOfLife();
   game.draw();
   window.requestAnimationFrame(() => gameLoop());
-  canvas.style.width = "100vw";
-  canvas.style.heigth = "100vh";
+
   function gameLoop() {
     context.fillStyle = "303030";
     context.fillRect(0, 0, canvas.width, canvas.height);

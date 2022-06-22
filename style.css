@@ -1,4 +1,65 @@
-html, body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-color: #8080ff #303030;
+  scrollbar-width: thin;
+}
+
+body{
+  background-color: #303030;
+}
+
+.game{
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main h1{
+  color: white;
+}
+
+header{
+  background-color: #8080ff;
+  height: 10vh;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+header #start{
+  padding-left: 1rem;
+  justify-content: center;
+  width: 25%;
+  color: white;
+}
+header #end li{
+  list-style: none;
+  color: white;
+
+}
+header #end a{
+  text-decoration: none;
+}
+
+header #end{
+  display: flex;
+  gap: 0 1rem;
+  padding-right: 1rem;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 100vw;
+  height: 100px;
+  background-color: #8080ff;
 }
