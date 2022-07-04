@@ -1,12 +1,12 @@
 "use strict";
 
-
+// NÃO APAGA ISSO
 let canvasTag = document.querySelector("canvas");
 window.onload = canvasTag.setAttribute("width", window.innerWidth)
 window.addEventListener("resize",() =>{
   canvasTag.setAttribute("width", window.innerWidth)
 })
-
+// PELO AMOR DE DEUS
 
 
 const delay = 50;

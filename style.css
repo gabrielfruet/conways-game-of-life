@@ -2,59 +2,25 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
-  overflow-y: auto;
-  scrollbar-color: #8080ff #303030;
-  scrollbar-width: thin;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body{
-  background-color: #303030;
+  background: linear-gradient(#1d1d1d,#303030);
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
-.game{
+#game{
   padding: 0 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-main h1{
-  color: white;
-}
-
-header{
-  background-color: #8080ff;
-  height: 10vh;
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-
-header #start{
-  padding-left: 1rem;
-  justify-content: center;
-  width: 25%;
-  color: white;
-}
-header #end li{
-  list-style: none;
-  color: white;
-
-}
-header #end a{
-  text-decoration: none;
-}
-
-header #end{
-  display: flex;
-  gap: 0 1rem;
-  padding-right: 1rem;
-}
-
 footer{
-  position: fixed;
+  position: relative;
   bottom: 0;
   display: flex;
   flex-direction: column;
@@ -62,4 +28,123 @@ footer{
   width: 100vw;
   height: 100px;
   background-color: #8080ff;
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+header .logo{
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li{
+  list-style: none;
+  margin-left: 20px;
+} 
+
+header ul li a{
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px;
+}
+
+header ul li a:hover{
+  background: #fff;
+  color:#303030;
+}
+
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+section::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top,#303030, transparent);
+  z-index: 1000;
+}
+
+section img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+section img#moon{
+  mix-blend-mode: screen;
+}
+section img#mountains_front{
+  z-index: 10;
+}
+
+#text{
+  position: absolute;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 7.5vw;
+  z-index: 9;
+  right: -350px;
+}
+#sec{
+  position: relative;
+  padding: 100px;
+  background: #303030;
+}
+#sec h2{
+  font-size: 3.5em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+#sec p{
+  color: #fff;
+  font-size: 1em;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer #githublink{
+  text-decoration: none;
+  color: #fff;
+}
+footer #githublink:hover{
+  text-decoration: none;
+  color: #5e5efc;
 }
