@@ -2,7 +2,6 @@ let stars = document.querySelector("#stars");
 let moon = document.querySelector("#moon");
 let mountains_behind = document.querySelector("#mountains_behind");
 let text = document.querySelector("#text");
-let btn = document.querySelector("#btn");
 let mountains_front = document.querySelector("#mountains_front");
 let header = document.querySelector("header");
 
@@ -15,7 +14,6 @@ window.addEventListener("scroll", () => {
   mountains_front.style.top = value * 0.1 + "px";
   text.style.marginRight = value * 3.5 + "px";
   text.style.marginTop = value * 1.5 + "px";
-  btn.style.marginTop = value * 1.5 + "px";
   header.style.top = value * 0.5 + "px";
 
 });

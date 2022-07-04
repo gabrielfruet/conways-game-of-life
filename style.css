@@ -13,6 +13,7 @@ body{
 }
 
 #game{
+  flex-direction: column;
   padding: 0 3rem;
   display: flex;
   align-items: center;
@@ -119,19 +120,24 @@ section img#mountains_front{
   z-index: 9;
   right: -350px;
 }
-#sec{
+.sec{
   position: relative;
-  padding: 100px;
+  padding: 70px;
   background: #303030;
 }
-#sec h2{
+.sec h2{
   font-size: 3.5em;
   color: #fff;
   margin-bottom: 10px;
 }
-#sec p{
+.sec p{
   color: #fff;
   font-size: 1em;
+}
+
+.sec ul li{
+  list-style: none;
+  color: #fff;
 }
 
 footer{
