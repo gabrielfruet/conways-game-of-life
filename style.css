@@ -1,4 +1,157 @@
-html, body {
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body{
+  background: linear-gradient(#1d1d1d,#1e1255);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#game{
+  flex-direction: column;
+  padding: 0 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer{
+  position: relative;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 100vw;
+  height: 100px;
+  background-color: #8080ff;
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+header .logo{
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header ul li{
+  list-style: none;
+  margin-left: 20px;
+} 
+
+header ul li a{
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px;
+}
+
+header ul li a:hover{
+  background: #fff;
+  color:#303030;
+}
+
+section{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+section::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top,#303030, transparent);
+  z-index: 1000;
+}
+
+section img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+section img#moon{
+  object-fit: scale-down;
+  mix-blend-mode: screen;
+}
+section img#terra{
+  z-index: 10;
+  object-fit: unset;
+}
+
+#text{
+  position: absolute;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 7.5vw;
+  z-index: 9;
+}
+.sec{
+  position: relative;
+  padding: 70px;
+  background: #303030;
+}
+.sec h2{
+  font-size: 3.5em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.sec p{
+  color: #fff;
+  font-size: 1em;
+}
+
+.sec ul li{
+  list-style: none;
+  color: #fff;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer #githublink{
+  text-decoration: none;
+  color: #fff;
+}
+footer #githublink:hover{
+  text-decoration: none;
+  color: #5e5efc;
 }
